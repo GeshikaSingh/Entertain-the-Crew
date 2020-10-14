@@ -1,0 +1,378 @@
+*{
+	padding : 0;
+	margin : 0;
+}
+
+
+.menu{
+	text-align: center;
+	margin: 0 auto;
+	background-color: purple;
+	border:thin;
+	color:white;
+	padding: 15px 32px;
+	text-decoration: wavy;
+	display: inline-block;
+	font-size: 20px;
+	border-radius : 12px;
+    margin-top: 5px;
+	
+}
+
+.menu:hover{
+	border: thick solid whitesmoke;
+}
+
+.help-set{
+text-align: left;
+color: white;
+padding-left: 2%;
+}
+
+#help-table{
+	width: 18%;
+	height: 15%;
+	left: 75%;
+}
+
+h1{
+	font-size: 340%;
+	margin-top:1%;
+	/* color: #d440d4; */
+	color:rgba(13, 13, 212, 0.699);
+	 /* font-style: italic; */
+	text-shadow:
+    -2px -2px 0 whitesmoke;
+	-webkit-text-stroke-width : 2px;
+  -webkit-text-stroke-color : whitesmoke;
+}
+body{
+	font-family:'Lobster', cursive;
+}
+
+h3{
+	
+	color : cornsilk;
+	font-size: 30px;
+}
+button{
+	text-align: center;
+	margin: 0 auto;
+	background-color: lightblue;
+	border:thin;
+	color:blue;
+	padding: 15px 32px;
+	text-decoration: wavy;
+	display: inline-block;
+	font-size: 20px;
+	border-radius : 12px;
+
+}
+
+button:hover{
+	border: thick solid blue;
+}
+
+body{
+	height: 100vh;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+
+.mode-demo{
+	background-image: url("./img/FrontBG.jpg");
+}
+.mode-demo .dragon{
+	display: none;
+}
+.mode-gravity{
+	background-image: url("./img/earthBG.jpg");
+}
+.mode-anti-gravity .dragon{
+	display: none;
+}
+.mode-anti-gravity{
+	background-image: url("./img/marsBG.jpg");
+}
+.mode-gravity .dragon{
+	display: none;
+}
+.mode-attack{
+	background-image: url("./img/marsBG.jpg");
+}
+
+#help{
+	color: yellow;
+	position: fixed;
+	bottom: 1%;
+	left: 42.7%;
+}
+
+.help-menu{
+	position: relative;
+	left: 42%;
+	top: -10%;
+}
+
+.dragon{
+	position: absolute;
+	transform: scale(0.5);
+	z-index: -1;
+	top : -5%;
+	left : 8%;
+}
+.container{
+	padding-top: 3.5%;
+}
+
+.earth{
+	position: absolute;
+	top : 57%;
+	left : 0;
+	transform: rotate(-30deg);	
+	z-index: -2;
+}
+
+.mars{
+	position: absolute;
+	top : 60%;
+	right: 10%;	
+	z-index: -2;
+}
+.rocket{
+	position: absolute;
+	top : 41%;
+	left : 3.25%; 
+	height: 30%;
+	z-index: -1;
+	animation-name: fly;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.smoke{
+	position: absolute;
+	top : 19%;
+	left : 66%; 
+	opacity: 0;
+	animation: smoke 2s;
+	animation-fill-mode: forwards;
+	animation-delay: 4s;
+}
+
+.player{
+	position: absolute;
+	top: 42%;
+	transform: translateX(-50%) scale(0.3);
+	animation: growing 3s;
+	animation-fill-mode: forwards;
+}
+.player0 .load{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.player1 .load{
+	position: absolute;
+	top: 0;
+	left: 75%;
+}
+
+.loading span{
+	display:inline-block;
+	animation: loading 3s infinite;
+	color:whitesmoke;
+	font-size: 28px;
+	overflow: hidden;
+	white-space:nowrap;
+	/* background-color: yellow; */
+}
+
+.player0{
+	left: 20%;
+}
+.player0 img{
+	transform: scaleX(-1);
+}
+
+.player1{
+	left: 75%;
+}
+
+.player0.alien{
+	height: 10%;
+	top : 50%;
+	left: 27.7%; 
+}
+
+.player0.alien_med{
+	height: 40%;
+	/* top : 50%; */
+	left: 27.7%; 
+}
+.player0.alien_hard{
+	height: 70%;
+	top : 15%;
+	left: 27.7%; 
+}
+img{
+	height: 100%;
+	display: block;
+}
+
+
+
+
+td {
+	border:  2px solid white;
+	height:  100px;
+	width:  100px;
+	text-align:  center;
+	vertical-align:  middle;
+	font-family:  "Comic Sans MS", cursive, sans-serif;
+	font-size:  70px;
+	cursor: pointer;
+	position: relative;
+	color: honeydew;
+}
+
+.falling {
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
+	margin: 0;
+}
+
+table {
+	border-collapse: collapse;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 40%;
+}
+
+table tr:first-child td {
+	border-top: 0;
+}
+
+table tr:last-child td {
+	border-bottom: 0;
+}
+
+table tr td:first-child {
+	border-left: 0;
+}
+
+table tr td:last-child {
+	border-right: 0;
+}
+
+.endgame {
+  display: none;
+  width: 360px;
+  top: 30%;
+  background-color: rgba(205,133,63, 0.8);
+  position: absolute;
+  left: 44%;
+  margin-left: -100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 2em;
+}
+
+.color{
+	background-color : green;
+}
+
+.menu-grid{
+	transform: scale(0.75);
+	top: 50%;
+	left: 38%;
+}
+
+
+.menu-endgame{
+	top: 60%;
+}
+
+
+
+
+
+@keyframes fly{
+	0%{
+		left : 3.25%; 
+	}
+
+	20%{
+		left : 3.25%; 
+		transform: rotate(0deg);
+	}
+
+	40%{
+		transform: rotate(90deg);
+	}
+	
+	50%{
+		top: 0%;
+	}
+
+	60%{
+		transform: rotate(90deg);
+	}
+
+	80%{
+		left: 76%;
+		transform: rotate(180deg);
+	}
+
+	99.8%{
+		left: 76%;
+		transform: rotate(180deg);
+	}
+
+	100%{
+		left: 77%;
+		transform: rotate(0);
+	}
+}
+
+@keyframes smoke{
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+@keyframes loading{
+	0%{
+		width: 0;
+	}
+
+	25%{
+		width: 12px;
+	}
+	50%{
+		width: 24px;
+	}
+
+	75%{
+		width: 37px;
+	}
+}
+
+@keyframes growing{
+	100%{
+
+		transform:translateX(-50%) scale(1);
+	}
+}
